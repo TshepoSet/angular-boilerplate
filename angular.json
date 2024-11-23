@@ -33,7 +33,6 @@
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
-              "_theme-color.scss",
               "src/styles.scss"
             ],
             "scripts": [
