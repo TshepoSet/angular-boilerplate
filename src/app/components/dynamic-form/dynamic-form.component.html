@@ -1,0 +1,19 @@
+<div [formGroup]="formControls">
+  <div>
+    @switch (form.controlType) { @case ('text') {
+    <mat-form-field [appearance]="formAppearance">
+      <mat-label [attr.for]="form.key">{{ form.label}}</mat-label>
+      <input matInput [placeholder]="form.placeholder ?? 'enter text'" [formControlName]="form.key ?? ''" [type]="form.type"/>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+    } @case ('dropdown') {
+    <mat-form-field [appearance]="formAppearance">
+      <mat-label>Fill form field</mat-label>
+      <input matInput placeholder="Placeholder" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+    } }
+  </div>
+</div>
