@@ -1,0 +1,13 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    @for(formInput of formInputs; track form){
+      <div>
+        <app-dynamic-form [form]="formInput" [formControls]="form"></app-dynamic-form>
+      </div>
+    }
+
+    <div>
+      <button mat-flat-button type="submit" [disabled]="!form.valid">Submit</button>
+    </div>
+  </form>
+</div>

@@ -1,5 +1,5 @@
-interface FormControlBase {
-  value?: string | undefined;
+export interface FormControlBase <T> {
+  value?: T | undefined;
   key?: string;
   label?: string;
   order?: number;

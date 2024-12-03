@@ -2,17 +2,26 @@
   <div>
     @switch (form.controlType) { @case ('text') {
     <mat-form-field [appearance]="formAppearance">
-      <mat-label [attr.for]="form.key">{{ form.label}}</mat-label>
-      <input matInput [placeholder]="form.placeholder ?? 'enter text'" [formControlName]="form.key ?? ''" [type]="form.type"/>
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
+      <mat-label [attr.for]="form.key">{{ form.label }}</mat-label>
+      <input
+        matInput
+        [placeholder]="form.placeholder"
+        [id]="form.key"
+        [formControlName]="form.key"
+        [type]="form.type"
+      />
     </mat-form-field>
     } @case ('dropdown') {
     <mat-form-field [appearance]="formAppearance">
-      <mat-label>Fill form field</mat-label>
-      <input matInput placeholder="Placeholder" />
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
+      <mat-label [attr.for]="form.key">{{ form.label }}</mat-label>
+      <mat-select
+        [formControlName]="form.key"
+        [id]="form.key"
+      >
+        @for(opt of form.options; track opt) {
+        <mat-option [value]="opt.value">{{ opt.key }}</mat-option>
+        }
+      </mat-select>
     </mat-form-field>
     } }
   </div>

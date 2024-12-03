@@ -1,3 +1,7 @@
-export class Textbox implements FormControlBase {
-  controlType = 'text';
+import { FormBase } from "./formBase";
+
+
+export class TextBox extends FormBase<string> {
+  override controlType = 'text';
+
 }

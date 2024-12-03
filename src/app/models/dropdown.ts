@@ -1,3 +1,5 @@
-export class Dropdown implements FormControlBase {
-  controlType = 'dropdown';
+import { FormBase } from "./formBase";
+
+export class Dropdown extends FormBase<string> {
+  override controlType = 'dropdown';
 }
